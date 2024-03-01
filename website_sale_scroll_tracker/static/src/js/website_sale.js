@@ -5,13 +5,17 @@ import { _t } from 'web.core';
 
 WebsiteSale.include({
     start: function () {
-        const scrollTop = localStorage.getItem('scrollTop') || 0;
-        $('html, body').animate({ scrollTop }, 'slow');
+        if (window.location.pathname === '/nl/shop' || window.location.pathname === '/nl') {
+            const scrollTop = localStorage.getItem('scrollTop') || 0;
+            $('html, body').animate({ scrollTop }, 'slow');
+        }
         return this._super.apply(this, arguments).then(()=> {
-            $('#wrapwrap').on('scroll', (ev) => {
-                ev.stopPropagation();
-                localStorage.setItem('scrollTop', ev.currentTarget.scrollTop);
-            });
+            if (window.location.pathname === '/nl/shop' || window.location.pathname === '/nl') {
+                $('#wrapwrap').on('scroll', (ev) => {
+                    ev.stopPropagation();
+                    localStorage.setItem('scrollTop', ev.currentTarget.scrollTop);
+                });
+            }
         });
     },
 });
