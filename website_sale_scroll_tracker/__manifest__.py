@@ -7,7 +7,7 @@
     'author': 'Projet',
     'website': 'https://bulutkobi.io',
     'license': 'LGPL-3',
-    'depends': ['website_sale'],
+    'depends': ['website'],
     'assets': {
         'web.assets_frontend': [
             'website_sale_scroll_tracker/static/src/js/website_sale.js',
