@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='utf-8' ?>
+<odoo>
+    <record id="order_form_view" model="ir.ui.view">
+        <field name="name">view.order.form.inh</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//control" position="inside">
+                <button name="sale_products_view_btn" class="px-4 btn-link" type="object" string="Add from catalog" show_in_line="true" context="{'default_display_type': 'product', 'sale_order_id': parent.id}"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

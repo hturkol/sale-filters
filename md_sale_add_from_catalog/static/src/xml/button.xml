@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-extend="KanbanView.buttons" t-name="md_sale_add_from_catalog.button">
+       <t t-jquery="button" t-operation="after">
+            <button t-if="widget.modelName == 'product.product'" type="button" class="btn btn-primary open_sale_order_action">Back To Sale Order</button>
+       </t>
+   </t>
+</templates>
